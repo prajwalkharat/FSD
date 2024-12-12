@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #f8f9fa; padding-top: 30px;">
+    <div class="container">
+        <h2 style="color: #343a40; text-align: center; margin-bottom: 30px;">Inventory Management System</h2>
+
+
+        <form id="productForm" class="mb-4">
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" id="productName" class="form-control" placeholder="Product Name" required style="font-size: 1rem;">
+                </div>
+                <div class="col">
+                    <input type="text" id="productCategory" class="form-control" placeholder="Category" required style="font-size: 1rem;">
+                </div>
+                <div class="col">
+                    <input type="number" id="productPrice" class="form-control" placeholder="Price" required style="font-size: 1rem;">
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary btn-block" style="font-size: 1rem;">Add Product</button>
+                </div>
+            </div>
+        </form>
+
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th style="text-align: center;">ID</th>
+                    <th style="text-align: center;">Name</th>
+                    <th style="text-align: center;">Category</th>
+                    <th style="text-align: center;">Price</th>
+                    <th style="text-align: center;">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="inventoryTable">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="ims.js"></script>
+</body>
+</html>

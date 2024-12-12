@@ -1,0 +1,35 @@
+.main_pwabyqe_div{width:100%; margin:0 auto; position:fixed; bottom:0; left:0; right:0; background:#fff; padding: 20px 10px; z-index:9999999999999999;}
+.pwaqe_inner{display:flex}
+.pwaqe_inner_detail{padding:0 0 0 20px;}
+.h2_pwaqe_inner_detail{margin:0 0 10px 0; padding:0; font-size:18px; letter-spacing:0; line-height:normal;}
+.p_pwaqe_inner_detail{margin:0; line-height:1.2; font-size:14px;}
+.pwaqe_button{background:#000; color:#fff; font-size:13px; border:0; padding: 6px 6px; position:absolute; bottom:10px; right:10px;}
+.pwaqe_button_close{position:absolute; top:10px; right:10px;}
+.pwaqe_inner_logo img{max-width:80px;}
+.popup_main_pwabyqe_div{margin:0 auto; position:fixed; top:0; left:0; right:0; background:rgba(0,0,0,.8); padding:20px; z-index:999999; height:100vh; color:#fff; display:flex;}
+.in_popup_main_pwabyqe_div{margin:auto; width:100%; background:#fff; text-align:center; padding:20px; border-radius:16px; border: 1px solid #999; border: 1px solid rgba(0,0,0,.2); -webkit-box-shadow: 0 3px 9px rgb(0 0 0 / 50%); box-shadow: 0 3px 9px rgb(0 0 0 / 50%);}
+.popup_main_app_logo{margin-bottom:0px; text-align:center;}
+.popup_main_app_logo img{max-width:100px; display:inline-block;}
+.pwabyqe_installheader{color:#006eff; font-size:22px; margin:0; padding:10px 0; font-weight:900; text-align:center;}
+.pwabyqe_benefits ul{margin:0; padding:0;}
+.pwabyqe_benefits ul li{display: block; font-size: 15px; margin: 0; padding: 3px 0; color: #000; font-weight: 400;}
+.pwabyqe_installmessage p{font-size:15px; margin:10px 0; padding:0; color:#000;}
+.pwabyqe_install_button{font-size:15px; border:0; padding:8px 15px; display:inline-block; border-radius:4px;}
+.pwabyqe_installmessage_ios{color:#000; font-size:14px; line-height:22px; margin:10px 0 10px 0px; text-align:center;}
+.popup_pwaqe_button_close{position:absolute; top:45px; right:15px; z-index: 99999;}
+.popup_main_app_logo img{max-width: 120px !important;}
+
+
+.main_pwabyqe_div .pwaqe_button{background: #4c4c4c; color: #fff; border-radius: 4px; font-weight: 700; font-size:12px;}
+.main_pwabyqe_div{background: #4c4c4c;}
+.main_pwabyqe_div .pwaqe_inner_detail{padding: 0 0 0 6px;}
+.main_pwabyqe_div .h2_pwaqe_inner_detail{color:#fff;}
+.main_pwabyqe_div .p_pwaqe_inner_detail{color:#fff;}
+.main_pwabyqe_div .pwaqe_button_close{background: #f00; color: #fff; border-radius: 100%; height: 18px; width: 18px; text-align: center; font-size:12px; line-height:18px; top:7px;}
+.main_pwabyqe_div .pwaqe_button_close:hover{background:#de5757;}
+.main_pwabyqe_div .pwaqe_button{background:#000000bf;}
+
+@media(min-width:480px){
+.main_pwabyqe_div,.popup_main_pwabyqe_div{display:none;}
+}
+ 

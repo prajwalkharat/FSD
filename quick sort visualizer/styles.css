@@ -1,0 +1,25 @@
+body {
+    background-color: #f8f9fa;
+  }
+  
+  .array-container {
+    height: 400px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .array-bar {
+    background-color: #007bff;
+    margin: 2px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .array-bar.pivot {
+    background-color: #dc3545 !important;
+  }
+  
+  .array-bar.partition {
+    background-color: #28a745 !important;
+  }
+  

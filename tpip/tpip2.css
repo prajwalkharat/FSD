@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #ffdbdb;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.color-box {
+    background-color: lightblue;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px auto;
+    color: black;
+}
+
+.image-box {
+    background-image: url('/imaged.jpeg');
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    color: rgb(255, 23, 23);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.repeat-box {
+    background-image: url('/imaged.jpeg');
+    background-repeat: repeat;
+    color: #ffdbdb;
+    width: 100%;
+    height: 100px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.position-box {
+    background-image: url('/imaged.jpeg');
+    background-position: left;
+    background-repeat: no-repeat;
+    width: 80%;
+    height: 100px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.size-box {
+    background-image: url('/imaged.jpeg');
+    background-size: 300px 200px;
+    background-repeat: no-repeat;
+    width:300px;
+    height: 200px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: black;
+}
+.custom-box {
+    background-image: url('/imaged.jpeg');
+    background-color: rgb(250, 37, 37);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    width: 100%;
+    align-content: center;
+    margin: 20px auto;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorting Numbers on Canvas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    canvas {
+      display: block;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      background: #ffffff;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quick Sort Visualization</h1>
+  <button id="generate">Generate Array</button>
+  <button id="sort">Sort Array</button>
+  <canvas id="sortCanvas" width="800" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById('sortCanvas');
+    const ctx = canvas.getContext('2d');
+    const generateBtn = document.getElementById('generate');
+    const sortBtn = document.getElementById('sort');
+
+    let array = [];
+
+    // Generate a random array and draw bars on canvas
+    function generateArray() {
+      array = Array.from({ length: 20 }, () => Math.floor(Math.random() * 100) + 10);
+      drawArray(array);
+    }
+
+    // Draw array as bars on canvas
+    function drawArray(arr, highlight = []) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const barWidth = canvas.width / arr.length;
+      arr.forEach((value, index) => {
+        const x = index * barWidth;
+        const y = canvas.height - value * 3;
+        const color = highlight.includes(index) ? "#ffc107" : "#007bff"; // Highlighted bars in yellow
+        ctx.fillStyle = color;
+        ctx.fillRect(x, y, barWidth - 2, value * 3);
+      });
+    }
+
+    // Quick Sort implementation with canvas visualization
+    async function quickSort(start, end) {
+      if (start >= end) return;
+
+      const pivotIndex = await partition(start, end);
+      await quickSort(start, pivotIndex - 1);
+      await quickSort(pivotIndex + 1, end);
+    }
+
+    // Partition logic
+    async function partition(start, end) {
+      const pivotValue = array[end];
+      let pivotIndex = start;
+
+      for (let i = start; i < end; i++) {
+        drawArray(array, [i, pivotIndex, end]); // Highlight current bars and pivot
+        if (array[i] < pivotValue) {
+          [array[i], array[pivotIndex]] = [array[pivotIndex], array[i]];
+          pivotIndex++;
+        }
+        await new Promise(resolve => setTimeout(resolve, 300)); // Animation delay
+      }
+
+      [array[pivotIndex], array[end]] = [array[end], array[pivotIndex]];
+      drawArray(array, [pivotIndex, end]); // Highlight final swap
+      await new Promise(resolve => setTimeout(resolve, 300)); // Animation delay
+      return pivotIndex;
+    }
+
+    // Event listeners
+    generateBtn.addEventListener('click', generateArray);
+    sortBtn.addEventListener('click', () => quickSort(0, array.length - 1));
+
+    // Initial array generation
+    generateArray();
+  </script>
+</body>
+</html>

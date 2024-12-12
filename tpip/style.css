@@ -1,0 +1,46 @@
+/* ID Selector for the h1 element */
+#main-title {
+    font-size: 36px;
+    color: #4CAF50; /* Green color */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Class Selector for the nav links */
+.nav-link {
+    font-size: 18px;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+}
+
+.nav-link:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Class Selector for the paragraph */
+.description {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.8;
+    font-family: 'Arial', sans-serif;
+}
+
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+/* Section styling */
+section {
+    padding: 20px;
+    background-color: #F0F0F0;
+}
+
+/* h2 element styling */
+h2 {
+    color: #4CAF50; /* Green color */
+}

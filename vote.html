@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Sort Visualization</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .bar-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 500px;
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      background-color: #fff;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 5px;
+    }
+    .bar {
+      margin: 2px;
+      text-align: center;
+      font-size: 12px;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .input-container {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-4">Quick Sort Visualization</h1>
+    <div class="input-container">
+      <label for="arrayInput">Enter Numbers (comma-separated): </label>
+      <input id="arrayInput" type="text" class="form-control d-inline w-auto" placeholder="e.g., 10, 30, 20, 50, 40">
+    </div>
+    <button id="generate" class="btn btn-primary">Generate Array</button>
+    <button id="sort" class="btn btn-success">Sort Array</button>
+    <div id="barContainer" class="bar-container"></div>
+  </div>
+
+  <script>
+    const barContainer = document.getElementById('barContainer');
+    const arrayInput = document.getElementById('arrayInput');
+    let array = [];
+
+    function generateArray() {
+      const input = arrayInput.value.trim();
+      if (input) {
+        array = input.split(',').map(Number).filter(num => !isNaN(num));
+        if (array.length > 0) {
+          renderBars(array);
+        } else {
+          alert('Please enter a valid array of numbers.');
+        }
+      } else {
+        alert('Please enter an array.');
+      }
+    }
+
+    function renderBars(arr, highlight = [], pivotIndex = null) {
+      barContainer.innerHTML = '';
+      const barWidth = (100 / arr.length) - 1;
+      for (let i = 0; i < arr.length; i++) {
+        const bar = document.createElement('div');
+        bar.style.height = `${arr[i] * 3}px`; 
+        bar.style.width = `${barWidth}%`;
+
+        if (pivotIndex === i) {
+          bar.style.backgroundColor = '#28a745'; 
+        } else if (highlight.includes(i)) {
+          bar.style.backgroundColor = '#ffc107'; 
+        } else {
+          bar.style.backgroundColor = '#007bff'; 
+        }
+
+        bar.classList.add('bar');
+        bar.innerText = arr[i];
+        barContainer.appendChild(bar);
+      }
+    }
+
+    async function quickSort(start, end) {
+      if (start >= end) return;
+
+      const pivotIndex = await partition(start, end);
+      await quickSort(start, pivotIndex - 1);
+      await quickSort(pivotIndex + 1, end);
+    }
+
+    async function partition(start, end) {
+      const pivotValue = array[end];
+      let pivotIndex = start;
+
+      for (let i = start; i < end; i++) {
+        renderBars(array, [i, pivotIndex, end]); 
+        if (array[i] < pivotValue) {
+          let temp = array[i];
+          array[i] = array[pivotIndex];
+          array[pivotIndex] = temp;
+          pivotIndex++;
+        }
+        await new Promise(resolve => setTimeout(resolve, 400)); 
+      }
+
+      let temp = array[pivotIndex];
+      array[pivotIndex] = array[end];
+      array[end] = temp;
+
+      renderBars(array, [], pivotIndex); 
+      await new Promise(resolve => setTimeout(resolve, 400)); 
+      return pivotIndex;
+    }
+
+    document.getElementById('generate').addEventListener('click', generateArray);
+    document.getElementById('sort').addEventListener('click', () => {
+      if (array.length > 0) {
+        quickSort(0, array.length - 1);
+      } else {
+        alert('Please generate an array first.');
+      }
+    });
+  </script>
+</body>
+</html>
