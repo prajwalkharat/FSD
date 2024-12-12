@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Login</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background-color: #f5f5f5;
+        }
+
+        /* Main Container */
+        .container {
+            width: 40%; /* Reduced width */
+            height: 600px; /* Increased height */
+            margin: 100px auto;
+            display: flex;
+            border: 1px solid #ddd;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Left Section Styling */
+        .left-section {
+            width: 40%;
+            background-color: #2874f0;
+            color: white;
+            padding: 40px 20px;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: start;
+        }
+
+        .left-section h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 0; /* Removed top margin */
+        }
+
+        .left-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .left-section img {
+            width: 60%; /* Reduced image size */
+            height: auto;
+            margin: 0 auto;
+        }
+
+        /* Right Section Styling */
+        .right-section {
+            width: 60%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right-section input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            margin-top: 10px; /* Reduced top margin */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .right-section p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .right-section a {
+            color: #2874f0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .right-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button Styling */
+        .otp-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .otp-button:hover {
+            background-color: #e64a19;
+        }
+
+        /* New User Section */
+        .new-user {
+            margin-top: 80px; /* Moved down */
+            font-size: 14px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section (Login Info) -->
+        <div class="left-section">
+            <h2>Login</h2>
+            <p>Get access to your Orders, Wishlist, and Recommendations</p>
+            <img src="/Full Stack Development Program/flipkart.png" alt="Login Illustration">
+        </div>
+
+        <!-- Right Section (Login Form) -->
+        <div class="right-section">
+            <input type="text" placeholder="Enter Email/Mobile number" required>
+            <p>By continuing, you agree to Flipkart's <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+            <button class="otp-button">Request OTP</button>
+            <p class="new-user">New to Flipkart? <a href="#">Create an account</a></p>
+        </div>
+    </div>
+</body>
+</html>
