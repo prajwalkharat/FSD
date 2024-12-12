@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Login Page</title>
+    <link rel="stylesheet" href="loginstyle.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="left-section">
+                <h2>Login</h2>
+                <p>Get access to your Orders,<br> Wishlist, and<br> Recommendations</p>
+                <img src="flipkart.png" alt="img" class="left-image">
+            </div>
+            <div class="right-section">
+                <form id="loginForm">
+                    <input type="text" id="userInput" placeholder="Enter Email/Mobile number" required>
+                    <p id="errorMessage" style="color: red; font-size: 14px;"></p>
+                    <p>By continuing, you agree to Flipkart's <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+                    <button type="submit">Request OTP</button>
+                </form>
+                <a href="#" class="new-account">New to Flipkart? Create an account</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const userInput = document.getElementById("userInput").value;
+            const errorMessage = document.getElementById("errorMessage");
+
+            const isEmail = userInput.includes("@") && userInput.includes(".");
+            const isMobile = userInput.length === 10 && /^[0-9]+$/.test(userInput);
+
+            if (isEmail || isMobile) {
+                errorMessage.textContent = "";
+                alert("OTP requested successfully!");
+                this.submit(); 
+            } else {
+                errorMessage.textContent = "Please enter a valid Email or Mobile number.";
+            }
+        });
+    </script>
+</body>
+</html>
